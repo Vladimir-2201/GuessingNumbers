@@ -5,7 +5,7 @@ def is_valid(variant, end):
 
 def start_game():
     while True:
-        end = input('Введите максимальное целое число для генерации (больше 0) ')
+        end = input('Введите максимальное целое число для генерации (больше 0) ').strip()
         if end.isdigit() and int(end) >= 1:
             return randint(1, int(end)), 0, int(end)
         else:
@@ -13,13 +13,13 @@ def start_game():
 
 def restart(yes, no, ext = ''):
     while ext != yes and ext != no:  
-        ext = input(f'Чтобу сыграть ещё раз введите "{yes}". Для завершения игры введите "{no}": ')
+        ext = input(f'Чтобу сыграть ещё раз введите "{yes}". Для завершения игры введите "{no}": ').strip()
     return ext == yes
 
 print('Добро пожаловать в числовую угадайку')
 num, total, end = start_game()
 while True:
-    input_num = input(f'Введите целое число от 1 до {end}: ')
+    input_num = input(f'Введите целое число от 1 до {end}: ').strip()
     total += 1
     if is_valid(input_num, end):
         input_num = int(input_num)
