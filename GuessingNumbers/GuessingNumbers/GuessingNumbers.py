@@ -40,3 +40,4 @@ while True:
             break
 
 print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+input('Press ENTER to exit ')
